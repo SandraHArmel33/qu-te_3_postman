@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "1c24a74b-a6c4-4cae-afd0-98e628b4df8d",
+		"name": "Covid19-tracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "recuperation du status ok",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search",
+					"protocol": "https",
+					"host": [
+						"corona-virus-stats",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cases",
+						"countries-search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "statistiques pour la France",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search?search=France",
+					"protocol": "https",
+					"host": [
+						"corona-virus-stats",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cases",
+						"countries-search"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "France"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recherche mort/pays par ordre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search?order=total_deaths",
+					"protocol": "https",
+					"host": [
+						"corona-virus-stats",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cases",
+						"countries-search"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "total_deaths"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "retour tableau vide pays erroné",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search?search=Jupiter",
+					"protocol": "https",
+					"host": [
+						"corona-virus-stats",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cases",
+						"countries-search"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "Jupiter"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"/*pm.test(\"countries starting with 'a'\", function(){\r",
+							"\r",
+							"    var responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.id).to.have.max.length[5];\r",
+							"    pm.expect(responseJson.type).to.eql('countries');\r",
+							"\r",
+							"});*/\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://corona-virus-stats.herokuapp.com/api/v1/cases/countries",
+					"protocol": "https",
+					"host": [
+						"corona-virus-stats",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cases",
+						"countries"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
